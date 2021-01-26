@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.*;
 
 @Entity
 @NamedQueries({@NamedQuery(name="Cliente.buscarTodos", query="SELECT c FROM Cliente c")})
-@Table(name="CLIENTE")
+@Table(name="cliente")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Cliente implements Serializable {
     
@@ -22,8 +22,10 @@ public class Cliente implements Serializable {
     private String nombres;
     @Size(max=50)
     private String apellidos;
+    //se relaciona con Orden
     @OneToMany(mappedBy = "cliente")
     private List<Cliente> listaClientes;
+    
     public Cliente() {
     }
 
