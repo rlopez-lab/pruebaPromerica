@@ -13,10 +13,13 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
 @Entity
 @NamedQueries({@NamedQuery(name="Orden.buscarTodos", query="SELECT o FROM Orden o")})
 @Table(name="orden")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Orden implements Serializable{
     private static final long serialVersionUID = 1L;
     

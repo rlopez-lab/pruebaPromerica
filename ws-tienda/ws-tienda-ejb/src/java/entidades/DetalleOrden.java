@@ -9,10 +9,13 @@ import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
 @Entity
 @IdClass(DetalleOrdenPK.class)
 @Table(name="detalle_orden")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class DetalleOrden implements Serializable{
     
     private static final long serialVersionUID = 1L; 

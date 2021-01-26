@@ -6,9 +6,11 @@ import entidades.Orden;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.jws.WebService;
 
 @Stateless
-public class OrdenServiceImpl implements OrdenService {
+@WebService(endpointInterface = "servicios.OrdenServiceWs")
+public class OrdenServiceImpl implements OrdenService, OrdenServiceWs {
 
     @Inject
     private OrdenDao ordenDao;
