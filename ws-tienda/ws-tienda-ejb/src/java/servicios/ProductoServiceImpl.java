@@ -4,13 +4,14 @@ package servicios;
 import daos.ProductoDao;
 import entidades.Producto;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 @Stateless
 public class ProductoServiceImpl implements ProductoService {
    
-    @Inject
+    @EJB
     ProductoDao productoDao;
 
     @Override
