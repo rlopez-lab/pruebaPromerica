@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-ProductoServiceImpl" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ProductoServiceImpl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ProductoServiceImpl" destdir="${build.generated.dir}/jax-wsCache/ProductoServiceImpl" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ProductoServiceImpl/wsdl/localhost_9090/ProductoServiceImplService/ProductoServiceImpl.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/ProductoServiceImplService/ProductoServiceImpl?wsdl" xnocompile="true" xendorsed="true" package="tiendaws.producto">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ProductoServiceImpl/wsdl/localhost_9090/ProductoServiceImplService/ProductoServiceImpl.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ProductoServiceImpl"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ProductoServiceImpl">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ProductoServiceImpl" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/tiendaws/producto"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ProductoServiceImpl"/>
+    </target>
+    <target name="wsimport-client-ClienteServiceImpl" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/ClienteServiceImpl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/ClienteServiceImpl" destdir="${build.generated.dir}/jax-wsCache/ClienteServiceImpl" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/ClienteServiceImpl/wsdl/localhost_9090/ClienteServiceImplService/ClienteServiceImpl.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/ClienteServiceImplService/ClienteServiceImpl?wsdl" xnocompile="true" xendorsed="true" package="tiendaws.cliente">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/ClienteServiceImpl/wsdl/localhost_9090/ClienteServiceImplService/ClienteServiceImpl.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/ClienteServiceImpl"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/ClienteServiceImpl">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-ClienteServiceImpl" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/tiendaws/cliente"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/ClienteServiceImpl"/>
+    </target>
+    <target name="wsimport-client-DetalleOrdenServiceImpl" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/DetalleOrdenServiceImpl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DetalleOrdenServiceImpl" destdir="${build.generated.dir}/jax-wsCache/DetalleOrdenServiceImpl" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/DetalleOrdenServiceImpl/wsdl/localhost_9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl?wsdl" xnocompile="true" xendorsed="true" package="tiendaws.detalleOrden">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/DetalleOrdenServiceImpl/wsdl/localhost_9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/DetalleOrdenServiceImpl"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/DetalleOrdenServiceImpl">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-DetalleOrdenServiceImpl" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/tiendaws/detalleOrden"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/DetalleOrdenServiceImpl"/>
+    </target>
+    <target name="wsimport-client-OrdenServiceImpl" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl" destdir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OrdenServiceImpl/wsdl/localhost_9090/OrdenServiceImplService/OrdenServiceImpl.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/OrdenServiceImplService/OrdenServiceImpl?wsdl" xnocompile="true" xendorsed="true" package="tiendaws.orden">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OrdenServiceImpl/wsdl/localhost_9090/OrdenServiceImplService/OrdenServiceImpl.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OrdenServiceImpl" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/tiendaws/orden"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl"/>
+    </target>
+    <target name="wsimport-client-OrdenServiceImpl_1" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl_1"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl_1" destdir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/OrdenServiceImpl_1/wsdl/localhost_9090/OrdenServiceImplService/OrdenServiceImpl.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:9090/OrdenServiceImplService/OrdenServiceImpl?wsdl" xnocompile="true" xendorsed="true" package="tiendaws.orden">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/OrdenServiceImpl_1/wsdl/localhost_9090/OrdenServiceImplService/OrdenServiceImpl.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl_1"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl_1">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-OrdenServiceImpl_1" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/tiendaws/orden"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/OrdenServiceImpl_1"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-ProductoServiceImpl, wsimport-client-ClienteServiceImpl, wsimport-client-DetalleOrdenServiceImpl, wsimport-client-OrdenServiceImpl, wsimport-client-OrdenServiceImpl_1"/>
+</project>

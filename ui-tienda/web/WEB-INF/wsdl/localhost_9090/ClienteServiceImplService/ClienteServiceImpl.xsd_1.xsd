@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="eliminarCliente" type="tns:eliminarCliente"/>
+
+<xs:element name="eliminarClienteResponse" type="tns:eliminarClienteResponse"/>
+
+<xs:element name="encontrarClienteId" type="tns:encontrarClienteId"/>
+
+<xs:element name="encontrarClienteIdResponse" type="tns:encontrarClienteIdResponse"/>
+
+<xs:element name="listaClientes" type="tns:listaClientes"/>
+
+<xs:element name="listaClientesResponse" type="tns:listaClientesResponse"/>
+
+<xs:element name="modificarCliente" type="tns:modificarCliente"/>
+
+<xs:element name="modificarClienteResponse" type="tns:modificarClienteResponse"/>
+
+<xs:element name="registrarCliente" type="tns:registrarCliente"/>
+
+<xs:element name="registrarClienteResponse" type="tns:registrarClienteResponse"/>
+
+<xs:complexType name="encontrarClienteId">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="listaOrden" type="tns:orden" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orden">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="detalleOrden" type="tns:detalleOrden" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="idCliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="detalleOrden">
+<xs:sequence>
+<xs:element name="detalleOrdenPK" type="tns:detalleOrdenPK" minOccurs="0"/>
+<xs:element name="cantidad" type="xs:int" minOccurs="0"/>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+<xs:element name="producto" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="detalleOrdenPK">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="encontrarClienteIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarCliente">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarClienteResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="registrarCliente">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="registrarClienteResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaClientes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaClientesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarCliente">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarClienteResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

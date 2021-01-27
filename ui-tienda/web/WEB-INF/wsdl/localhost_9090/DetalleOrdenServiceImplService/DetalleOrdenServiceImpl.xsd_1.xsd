@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="AgregarDetalleOrden" type="tns:AgregarDetalleOrden"/>
+
+<xs:element name="AgregarDetalleOrdenResponse" type="tns:AgregarDetalleOrdenResponse"/>
+
+<xs:element name="ModificarDetalleOrden" type="tns:ModificarDetalleOrden"/>
+
+<xs:element name="ModificarDetalleOrdenResponse" type="tns:ModificarDetalleOrdenResponse"/>
+
+<xs:element name="buscarDetalleOrdenId" type="tns:buscarDetalleOrdenId"/>
+
+<xs:element name="buscarDetalleOrdenIdResponse" type="tns:buscarDetalleOrdenIdResponse"/>
+
+<xs:element name="eliminarDetalleOrden" type="tns:eliminarDetalleOrden"/>
+
+<xs:element name="eliminarDetalleOrdenResponse" type="tns:eliminarDetalleOrdenResponse"/>
+
+<xs:element name="listaDetalleOrden" type="tns:listaDetalleOrden"/>
+
+<xs:element name="listaDetalleOrdenResponse" type="tns:listaDetalleOrdenResponse"/>
+
+<xs:complexType name="buscarDetalleOrdenId">
+<xs:sequence>
+<xs:element name="arg0" type="tns:detalleOrden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="detalleOrden">
+<xs:sequence>
+<xs:element name="detalleOrdenPK" type="tns:detalleOrdenPK" minOccurs="0"/>
+<xs:element name="cantidad" type="xs:int" minOccurs="0"/>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+<xs:element name="producto" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="detalleOrdenPK">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="orden">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="detalleOrden" type="tns:detalleOrden" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="idCliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+<xs:element name="listaOrden" type="tns:orden" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarDetalleOrdenIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:detalleOrden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarDetalleOrden">
+<xs:sequence>
+<xs:element name="arg0" type="tns:detalleOrden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarDetalleOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaDetalleOrden">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaDetalleOrdenResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:detalleOrden" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarDetalleOrden">
+<xs:sequence>
+<xs:element name="arg0" type="tns:detalleOrden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarDetalleOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ModificarDetalleOrden">
+<xs:sequence>
+<xs:element name="arg0" type="tns:detalleOrden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ModificarDetalleOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

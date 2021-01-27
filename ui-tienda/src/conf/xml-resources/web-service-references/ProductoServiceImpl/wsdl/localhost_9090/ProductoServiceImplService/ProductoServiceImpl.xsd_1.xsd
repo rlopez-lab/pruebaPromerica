@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="agregarProducto" type="tns:agregarProducto"/>
+
+<xs:element name="agregarProductoResponse" type="tns:agregarProductoResponse"/>
+
+<xs:element name="eliminarProducto" type="tns:eliminarProducto"/>
+
+<xs:element name="eliminarProductoResponse" type="tns:eliminarProductoResponse"/>
+
+<xs:element name="encontrarProductoId" type="tns:encontrarProductoId"/>
+
+<xs:element name="encontrarProductoIdResponse" type="tns:encontrarProductoIdResponse"/>
+
+<xs:element name="listaProductos" type="tns:listaProductos"/>
+
+<xs:element name="listaProductosResponse" type="tns:listaProductosResponse"/>
+
+<xs:element name="modificarProducto" type="tns:modificarProducto"/>
+
+<xs:element name="modificarProductoResponse" type="tns:modificarProductoResponse"/>
+
+<xs:complexType name="eliminarProducto">
+<xs:sequence>
+<xs:element name="arg0" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProductoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaProductos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaProductosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarProducto">
+<xs:sequence>
+<xs:element name="arg0" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarProductoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="encontrarProductoId">
+<xs:sequence>
+<xs:element name="arg0" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="encontrarProductoIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProducto">
+<xs:sequence>
+<xs:element name="arg0" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProductoResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>

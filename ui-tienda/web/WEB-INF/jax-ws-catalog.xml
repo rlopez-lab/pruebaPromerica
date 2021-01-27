@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:9090/ClienteServiceImplService/ClienteServiceImpl?wsdl" uri="wsdl/localhost_9090/ClienteServiceImplService/ClienteServiceImpl.wsdl"/>
+    <system systemId="http://localhost:9090/ClienteServiceImplService/ClienteServiceImpl?xsd=1" uri="wsdl/localhost_9090/ClienteServiceImplService/ClienteServiceImpl.xsd_1.xsd"/>
+    <system systemId="http://rlopez-pc:9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl?wsdl" uri="wsdl/rlopez-pc_9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl.wsdl"/>
+    <system systemId="http://rlopez-pc:9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl?xsd=1" uri="wsdl/rlopez-pc_9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/ProductoServiceImplService/ProductoServiceImpl?wsdl" uri="wsdl/localhost_9090/ProductoServiceImplService/ProductoServiceImpl.wsdl"/>
+    <system systemId="http://localhost:9090/ProductoServiceImplService/ProductoServiceImpl?xsd=1" uri="wsdl/localhost_9090/ProductoServiceImplService/ProductoServiceImpl.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl?wsdl" uri="wsdl/localhost_9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl.wsdl"/>
+    <system systemId="http://localhost:9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl?xsd=1" uri="wsdl/localhost_9090/DetalleOrdenServiceImplService/DetalleOrdenServiceImpl.xsd_1.xsd"/>
+    <system systemId="http://localhost:9090/OrdenServiceImplService/OrdenServiceImpl?wsdl" uri="wsdl/localhost_9090/OrdenServiceImplService/OrdenServiceImpl.wsdl"/>
+    <system systemId="http://localhost:9090/OrdenServiceImplService/OrdenServiceImpl?xsd=1" uri="wsdl/localhost_9090/OrdenServiceImplService/OrdenServiceImpl.xsd_1.xsd"/>
+</catalog>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="agregarOrden" type="tns:agregarOrden"/>
+
+<xs:element name="agregarOrdenResponse" type="tns:agregarOrdenResponse"/>
+
+<xs:element name="eliminarOrden" type="tns:eliminarOrden"/>
+
+<xs:element name="eliminarOrdenResponse" type="tns:eliminarOrdenResponse"/>
+
+<xs:element name="encontrarOrdenId" type="tns:encontrarOrdenId"/>
+
+<xs:element name="encontrarOrdenIdResponse" type="tns:encontrarOrdenIdResponse"/>
+
+<xs:element name="listaOrden" type="tns:listaOrden"/>
+
+<xs:element name="listaOrdenResponse" type="tns:listaOrdenResponse"/>
+
+<xs:element name="modificarOrden" type="tns:modificarOrden"/>
+
+<xs:element name="modificarOrdenResponse" type="tns:modificarOrdenResponse"/>
+
+<xs:complexType name="agregarOrden">
+<xs:sequence>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="orden">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="fecha" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="idCliente" type="tns:cliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="apellidos" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="modificarOrden">
+<xs:sequence>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaOrden">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listaOrdenResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:orden" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarOrden">
+<xs:sequence>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarOrdenResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="encontrarOrdenId">
+<xs:sequence>
+<xs:element name="orden" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="encontrarOrdenIdResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:orden" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

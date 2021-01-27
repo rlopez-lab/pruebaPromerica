@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="form1" >
+            <p:dataTable value="#{ordenBeanWS.listaOrdenes}" var="ordenes" >
+                <f:facet name="header">
+                    Listado de Ordenes
+                </f:facet>
+                <p:column headerText= "Orden"> 
+                    <h:outputText value="#{ordenes.id}"/>
+                </p:column>
+                
+                <p:column headerText="Cliente">
+                    <h:outputText value="#{ordenes.idCliente.nombres} #{ordenes.idCliente.apellidos}"/>
+                </p:column>
+                
+                <p:column headerText="Fecha de Orden">
+                    <h:outputText value="#{ordenes.fecha}"/>
+                </p:column>
+                
+                <p:column>
+                    <p:commandButton value="Modificar" actionListener="#{ordenBeanWS.buscarOrden1(ordenes.id)}" update=":form1:panel"/>
+                </p:column>
+            </p:dataTable>
+            
+            
+           
+            <p:panelGrid id="panel" columns="2">
+                    <p:outputLabel value="Orden"/>
+                    <p:inputText    id="orden" value="#{ordenBeanWS.ordenEncontrada.id}" />
+                    <p:outputLabel value="nombre"/>
+                    <p:inputText id="nombre" value="#{ordenBeanWS.ordenEncontrada.idCliente.nombres}"/>
+                    <p:outputLabel value="fecha"/>
+                    <p:inputText id="fecha" value="fecha"/>
+                    <f:facet name="footer">
+                        <h:panelGroup>                   
+                            <p:dataTable value="#{beans.items}" var="item">
+                                <p:column>
+                                    <p:outputLabel value="Producto"/>
+                                </p:column>
+                            </p:dataTable>                     
+                        </h:panelGroup>
+                    </f:facet>     
+                                                       
+                 </p:panelGrid>   
+            </h:form>
+    </h:body>
+</html>
+
