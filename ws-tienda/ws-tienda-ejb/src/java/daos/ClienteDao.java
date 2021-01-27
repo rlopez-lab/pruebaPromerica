@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public interface ClienteDao {
-    public List<Cliente> listaPersonas();
+    public List<Cliente> listaClientes();
     public Cliente encontrarClienteId(Cliente cliente);
     public void agregarCliente(Cliente cliente);
     public void modificarCliente(Cliente cliente);

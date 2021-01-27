@@ -6,7 +6,6 @@ import entidades.Cliente;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.jws.WebService;
 
 @Stateless
@@ -18,7 +17,7 @@ public class ClienteServiceImpl implements ClienteService, ClienteServiceWs{
     
     @Override
     public List<Cliente> listaClientes() {      
-        return clienteDao.listaPersonas();
+        return clienteDao.listaClientes();
     }
 
     @Override

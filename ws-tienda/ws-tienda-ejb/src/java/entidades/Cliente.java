@@ -23,6 +23,7 @@ public class Cliente implements Serializable {
     @Size(max=50)
     private String apellidos;
     //se relaciona con Orden
+    @XmlTransient
     @OneToMany(mappedBy = "idCliente")
     private List<Orden> listaOrden;
     

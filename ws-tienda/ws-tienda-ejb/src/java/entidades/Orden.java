@@ -14,8 +14,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
 @NamedQueries({@NamedQuery(name="Orden.buscarTodos", query="SELECT o FROM Orden o")})
@@ -26,8 +28,9 @@ public class Orden implements Serializable{
     
     @Id
     private Integer id;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fecha;
-    
+    @XmlTransient
     @OneToMany(mappedBy = "orden")
     private List<DetalleOrden> detalleOrden;
     @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID")

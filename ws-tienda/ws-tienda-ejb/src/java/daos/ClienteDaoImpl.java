@@ -13,7 +13,7 @@ public class ClienteDaoImpl implements ClienteDao {
     EntityManager em;
 
     @Override
-    public List<Cliente> listaPersonas() {
+    public List<Cliente> listaClientes() {
         return em.createNamedQuery("Cliente.buscarTodos").getResultList();
     }
 

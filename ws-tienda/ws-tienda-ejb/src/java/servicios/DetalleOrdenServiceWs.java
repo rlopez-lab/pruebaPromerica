@@ -4,6 +4,7 @@ package servicios;
 import entidades.DetalleOrden;
 import java.util.List;
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 @WebService
@@ -11,12 +12,12 @@ public interface DetalleOrdenServiceWs {
    @WebMethod
    public List<DetalleOrden> listaDetalleOrden();
    @WebMethod
-   public DetalleOrden buscarDetalleOrdenId(DetalleOrden detalleOrden);
+   public DetalleOrden buscarDetalleOrdenId(@WebParam(name="detalleOrden") DetalleOrden detalleOrden);
    @WebMethod
-   public void AgregarDetalleOrden(DetalleOrden detalleOrden);
+   public void AgregarDetalleOrden(@WebParam(name="detalleOrden") DetalleOrden detalleOrden);
    @WebMethod
-   public void ModificarDetalleOrden(DetalleOrden detalleOrden);
+   public void ModificarDetalleOrden(@WebParam(name="detalleOrden") DetalleOrden detalleOrden);
    @WebMethod
-   public void eliminarDetalleOrden(DetalleOrden detalleOrden);
+   public void eliminarDetalleOrden(@WebParam(name="detalleOrden") DetalleOrden detalleOrden);
     
 }

@@ -2,17 +2,20 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.*;
 
 @Entity
-@NamedQueries({@NamedQuery(name="Producto.buscarTodo", query="SELECT p FROM Producto p")})
+@NamedQueries({@NamedQuery(name="Producto.buscarTodos", query="SELECT p FROM Producto p")})
 @Table(name="producto")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Producto implements Serializable {
@@ -23,7 +26,9 @@ public class Producto implements Serializable {
     private String nombre;
     private String descripcion;
     private double precio;
-
+    @XmlTransient
+    @OneToMany(mappedBy = "producto")
+    private List<DetalleOrden> detalleOrden;
     public Producto() {
     }
 
@@ -63,6 +68,14 @@ public class Producto implements Serializable {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public List<DetalleOrden> getDetalleOrden() {
+        return detalleOrden;
+    }
+
+    public void setDetalleOrden(List<DetalleOrden> detalleOrden) {
+        this.detalleOrden = detalleOrden;
     }
     
     

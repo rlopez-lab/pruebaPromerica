@@ -6,21 +6,22 @@ import entidades.Producto;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
+import javax.jws.WebService;
 
 @Stateless
-public class ProductoServiceImpl implements ProductoService {
+@WebService(endpointInterface = "servicios.ProductoServiceWs")
+public class ProductoServiceImpl implements ProductoService, ProductoServiceWs {
    
     @EJB
     ProductoDao productoDao;
 
     @Override
-    public List<Producto> listarProductos() {
+    public List<Producto> listaProductos() {
         return productoDao.listaProductos();
     }
 
     @Override
-    public Producto buscarProductoId(Producto producto) {
+    public Producto encontrarProductoId(Producto producto) {
         return productoDao.encontrarProductoId(producto);
     }
 

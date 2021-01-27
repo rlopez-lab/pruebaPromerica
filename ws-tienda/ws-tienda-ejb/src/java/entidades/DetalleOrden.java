@@ -6,12 +6,15 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
 @Entity
 @Table(name="detalle_orden")
+@NamedQueries({@NamedQuery(name="DetalleOrden.buscarTodos", query="SELECT d FROM DetalleOrden d")})
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DetalleOrden implements Serializable{
     

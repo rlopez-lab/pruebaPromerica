@@ -3,17 +3,18 @@ package daos;
 
 import entidades.Producto;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
+@Stateless
 public class ProductoDaoImpl implements ProductoDao{
     @PersistenceContext(name = "ws-tienda-PU")
     EntityManager em;
 
     @Override
     public List<Producto> listaProductos() {
-        return em.createNamedQuery("Producto.buscarTodo").getResultList();
+        return em.createNamedQuery("Producto.buscarTodos").getResultList();
     }
 
     @Override
