@@ -45,8 +45,7 @@ public class OrdenBeanWS implements Serializable{
      public void buscarOrden1(Integer ordenId) {
         ord = ordenId;
         orden.setId(ordenId);
-
-        ordenEncontrada = ordenService.encontrarOrdenId(ordenEncontrada);
+        ordenEncontrada = ordenService.encontrarOrdenId(orden);
         //System.out.println("orden: " + ord);
         //System.out.println("orden: " + ordenEncontrada.getId() +" "+ ordenEncontrada.getIdCliente().getId());
     }
