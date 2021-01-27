@@ -4,6 +4,7 @@ package servicios;
 import daos.ClienteDao;
 import entidades.Cliente;
 import java.util.List;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.jws.WebService;
@@ -12,7 +13,7 @@ import javax.jws.WebService;
 @WebService(endpointInterface = "servicios.ClienteServiceWs")
 public class ClienteServiceImpl implements ClienteService, ClienteServiceWs{
 
-    @Inject
+    @EJB
     private ClienteDao clienteDao;
     
     @Override
