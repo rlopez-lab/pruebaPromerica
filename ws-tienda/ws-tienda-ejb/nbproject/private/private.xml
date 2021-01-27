@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/conf/persistence.xml</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/entidades/Producto.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/servicios/OrdenServiceImpl.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/servicios/DetalleOrdenServiceImpl.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/entidades/Cliente.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/entidades/Orden.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/entidades/DetalleOrdenPK.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/servicios/DetalleOrdenService.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/conf/esquema.sql</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/entidades/DetalleOrden.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/servicios/ProductoServiceImpl.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/servicios/ClienteServiceImpl.java</file>
+            <file>file:/E:/TiendaEJB/ws-tienda/ws-tienda-ejb/src/java/servicios/DetalleOrdenServiceWs.java</file>
         </group>
     </open-files>
 </project-private>

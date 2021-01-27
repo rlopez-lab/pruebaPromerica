@@ -7,6 +7,9 @@
     <service name="OrdenServiceImpl">
       <implementation-class>servicios.OrdenServiceImpl</implementation-class>
     </service>
+    <service name="DetalleOrdenServiceImpl">
+      <implementation-class>servicios.DetalleOrdenServiceImpl</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

@@ -3,28 +3,30 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class DetalleOrdenPK implements Serializable {
     
-    
-    private Orden orden;  
-    private Producto producto;
+   @Column(name = "ID_ORDEN") 
+    private Integer idOrden;  
+   @Column(name = "ID_PRODUCTO")
+    private Integer idProducto;
 
     public DetalleOrdenPK() {
     }
 
-    public DetalleOrdenPK(Orden orden, Producto Producto) {
-        this.orden = orden;
-        this.producto = producto;
+    public DetalleOrdenPK(Integer idOrden, Integer idProducto) {
+        this.idOrden = idOrden;
+        this.idProducto = idProducto;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 11 * hash + Objects.hashCode(this.orden);
-        hash = 11 * hash + Objects.hashCode(this.producto);
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.idOrden);
+        hash = 53 * hash + Objects.hashCode(this.idProducto);
         return hash;
     }
 
@@ -37,7 +39,17 @@ public class DetalleOrdenPK implements Serializable {
             return false;
         }
         final DetalleOrdenPK other = (DetalleOrdenPK) obj;
+        if (!Objects.equals(this.idOrden, other.idOrden)) {
+            return false;
+        }
+        if (!Objects.equals(this.idProducto, other.idProducto)) {
+            return false;
+        }
         return true;
     }
+    
+    
+
+    
 
 }

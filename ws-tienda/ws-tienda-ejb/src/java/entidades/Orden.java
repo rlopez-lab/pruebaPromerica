@@ -4,7 +4,8 @@ package entidades;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
+import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -25,22 +26,21 @@ public class Orden implements Serializable{
     
     @Id
     private Integer id;
-    
-    @Column(name = "id_cliente")
-    @ManyToOne
-    @JoinColumn(name="id")
-    private Cliente cliente;
     private Date fecha;
-    //Se relaciona con orden
+    
     @OneToMany(mappedBy = "orden")
     private List<DetalleOrden> detalleOrden;
-
+    @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private Cliente idCliente;
+    
+  
     public Orden() {
     }
 
     
-    public Orden( Cliente cliente, Date fecha) {
-        this.cliente = cliente;
+    public Orden( Cliente idCliente, Date fecha) {
+        this.idCliente = idCliente;
         this.fecha = fecha;
     }
     
@@ -54,11 +54,11 @@ public class Orden implements Serializable{
     }
 
     public Cliente getCliente() {
-        return cliente;
+        return idCliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(Cliente idCliente) {
+        this.idCliente = idCliente;
     }
 
     public Date getFecha() {

@@ -23,8 +23,8 @@ public class Cliente implements Serializable {
     @Size(max=50)
     private String apellidos;
     //se relaciona con Orden
-    @OneToMany(mappedBy = "cliente")
-    private List<Cliente> listaClientes;
+    @OneToMany(mappedBy = "idCliente")
+    private List<Orden> listaOrden;
     
     public Cliente() {
     }
@@ -59,13 +59,15 @@ public class Cliente implements Serializable {
         this.apellidos = apellidos;
     }
 
-    public List<Cliente> getListaClientes() {
-        return listaClientes;
+    public List<Orden> getListaOrden() {
+        return listaOrden;
     }
 
-    public void setListaClientes(List<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
+    public void setListaOrden(List<Orden> listaOrden) {
+        this.listaOrden = listaOrden;
     }
+
+
     
     
 
